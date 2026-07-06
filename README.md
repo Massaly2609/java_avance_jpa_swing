@@ -1,3 +1,4 @@
+![Page d'accueil de l'application](capture_accueil.png)
 # Gestionnaire de Membres - Club Sportif UASZ
 
 ## 📌 Description du Projet
@@ -49,6 +50,4 @@ Ajustez vos identifiants de connexion PostgreSQL dans le fichier `src/main/resou
 <property name="jakarta.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/club_sportif"/>
 <property name="jakarta.persistence.jdbc.user" value="VOTRE_UTILISATEUR"/>
 <property name="jakarta.persistence.jdbc.password" value="VOTRE_MOT_DE_PASSE"/>
-```markdown
-![Capture de l'application](<img width="635" height="352" alt="capture_accueil" src="https://github.com/user-attachments/assets/1b300d7b-487b-4eb9-9ff3-fba59df43ef3" />
-)
+
