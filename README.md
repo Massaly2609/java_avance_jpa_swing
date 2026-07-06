@@ -49,3 +49,5 @@ Ajustez vos identifiants de connexion PostgreSQL dans le fichier `src/main/resou
 <property name="jakarta.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/club_sportif"/>
 <property name="jakarta.persistence.jdbc.user" value="VOTRE_UTILISATEUR"/>
 <property name="jakarta.persistence.jdbc.password" value="VOTRE_MOT_DE_PASSE"/>
+```markdown
+![Capture de l'application](/sn/uasz/m1/tp3/gui/img/liste.png)
