@@ -50,4 +50,5 @@ Ajustez vos identifiants de connexion PostgreSQL dans le fichier `src/main/resou
 <property name="jakarta.persistence.jdbc.user" value="VOTRE_UTILISATEUR"/>
 <property name="jakarta.persistence.jdbc.password" value="VOTRE_MOT_DE_PASSE"/>
 ```markdown
-![Capture de l'application](/sn/uasz/m1/tp3/gui/img/liste.png)
+![Capture de l'application](<img width="635" height="352" alt="capture_accueil" src="https://github.com/user-attachments/assets/1b300d7b-487b-4eb9-9ff3-fba59df43ef3" />
+)
