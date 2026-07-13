@@ -32,7 +32,7 @@ public class FenInscription extends JFrame implements ActionListener {
         setLocationRelativeTo(null);
         setLayout(null);
 
-        // Bouton RETOUR en haut à gauche (Conforme image Page 3)
+        // Bouton RETOUR en haut à gauche
         btnRetour = new JButton("<< RETOUR");
         btnRetour.setBounds(20, 15, 110, 30);
         btnRetour.setBackground(new Color(158, 158, 158));
@@ -78,7 +78,7 @@ public class FenInscription extends JFrame implements ActionListener {
         rbHomme.setBounds(330, 180, 75, 25);
         rbFemme = new JRadioButton("Femme");
         rbFemme.setBounds(410, 180, 75, 25);
-        bgSexe = new ButtonGroup();
+        bgSexe  = new ButtonGroup();
         bgSexe.add(rbHomme);
         bgSexe.add(rbFemme);
         add(rbHomme);
@@ -98,7 +98,7 @@ public class FenInscription extends JFrame implements ActionListener {
         add(lblDate);
         // Pré-remplissage avec la date du jour au format AAAA-MM-JJ
         String dateAujourdhui = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
-        txtDateAdhesion = new JTextField(dateAujourdhui);
+        txtDateAdhesion       = new JTextField(dateAujourdhui);
         txtDateAdhesion.setBounds(330, 260, 150, 25);
         add(txtDateAdhesion);
 
@@ -117,12 +117,12 @@ public class FenInscription extends JFrame implements ActionListener {
         btnAjouter.addActionListener(this);
         add(btnAjouter);
 
-        // Visuel Décoratif Droite "AJOUT MEMBRE"
+        // "AJOUT MEMBRE"
         JLabel lblIcon = new JLabel("", SwingConstants.CENTER);
         lblIcon.setBounds(530, 120, 150, 80);
 
         // Chargement de l'image depuis les ressources du sous-package actuel
-        URL urlAjout = getClass().getResource("/sn/uasz/m1/tp3/gui/img/ajout.png");
+        URL urlAjout  = getClass().getResource("/sn/uasz/m1/tp3/gui/img/ajout.png");
         if (urlAjout != null) {
             lblIcon.setIcon(new ImageIcon(urlAjout));
         } else {
@@ -139,6 +139,7 @@ public class FenInscription extends JFrame implements ActionListener {
         add(lblTxtAjout);
     }
 
+//    Associe plusieur type de composant ici (btnRetour, btnDeconnexion, btnAjouter )
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == btnRetour) {
@@ -148,14 +149,15 @@ public class FenInscription extends JFrame implements ActionListener {
             this.dispose();
             new FenConnexion().setVisible(true);
         } else if (e.getSource() == btnAjouter) {
-            String prenom = txtPrenom.getText().trim();
-            String nom = txtNom.getText().trim();
+//            Recuperer et stocker les donnees saisies par l'utilisateur
+            String prenom     = txtPrenom.getText().trim();
+            String nom        = txtNom.getText().trim();
             String profession = cbProfession.getSelectedItem().toString();
-            String email = txtEmail.getText().trim();
-            String sexe = rbHomme.isSelected() ? "Homme" : (rbFemme.isSelected() ? "Femme" : "");
-            String dateStr = txtDateAdhesion.getText().trim();
+            String email      = txtEmail.getText().trim();
+            String sexe       = rbHomme.isSelected() ? "Homme" : (rbFemme.isSelected() ? "Femme" : "");
+            String dateStr    = txtDateAdhesion.getText().trim();
 
-            // 1. Validation de présence
+            // 1. Validation de présence verifier si les champs sont vides
             if (prenom.isEmpty() || nom.isEmpty() || sexe.isEmpty() || email.isEmpty() || dateStr.isEmpty()) {
                 JOptionPane.showMessageDialog(this, "Veuillez remplir tous les champs !", "Erreur", JOptionPane.ERROR_MESSAGE);
                 return;
@@ -171,7 +173,7 @@ public class FenInscription extends JFrame implements ActionListener {
                 return;
             }
 
-            // 3. Validation du format e-mail via Expression Régulière simple
+            // 3. Validation du format e-mail via Expression Régulière simple (Regex)
             if (!email.matches("^[A-Za-z0-9+_.-]+@(.+)$")) {
                 JOptionPane.showMessageDialog(this, "Format de l'adresse email invalide !", "Erreur", JOptionPane.WARNING_MESSAGE);
                 return;

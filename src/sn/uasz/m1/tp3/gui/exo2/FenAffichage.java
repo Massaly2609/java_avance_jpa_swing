@@ -87,6 +87,7 @@ public class FenAffichage extends JFrame implements ActionListener {
         rafraichirTableau();
     }
 
+//    Methode pour rafraichir le tableau et charger les donnees
     private void rafraichirTableau() {
         modelTableau.setRowCount(0);
         listeMembres = membreDao.findAll();

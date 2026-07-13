@@ -18,7 +18,7 @@ public class Sport {
     // Jointure Many-to-Many vers la table d'association 'pratique'
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
-            name = "pratique",
+            name = "pratique", // Nom de la table d'association (Membre - Sport)
             joinColumns = @JoinColumn(name = "code"),
             inverseJoinColumns = @JoinColumn(name = "identifiant")
     )
